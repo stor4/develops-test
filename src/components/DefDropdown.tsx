@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 interface DefDropdownProps {
   data: any
   title?: string;
-  onSelect: (value: string) => void;
-  setId?: (id: string) => void;
+  onSelect: any;
+  setId?: any;
 }
 
 const DefDropdown: React.FC<DefDropdownProps> = ({
@@ -73,7 +73,7 @@ const DefDropdown: React.FC<DefDropdownProps> = ({
         <div className="absolute right-0 z-10 w-full mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
           <div className="py-1 max-h-[250px] overflow-auto">
             {data &&
-              data.map((item, key) => (
+              data.map((item: string, key: number) => (
                 <div key={key}>{renderItems(item, key)}</div>
               ))}
           </div>
